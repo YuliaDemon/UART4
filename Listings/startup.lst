@@ -1,0 +1,227 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 00000000 
+                       Stack_size
+                               EQU              0x00000000  ; Размер ст
+                                                            ека
+    2 00000000         
+    3 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3 
+                                                            ; Область с
+                                                            тека
+    4 00000000         Stack_Mem
+                               SPACE            Stack_size  ; выделени�
+                                                            � памяти по
+                                                            д стек
+    5 00000000         __initial_sp                         ; верхушка 
+                                                            стека
+    6 00000000         
+    7 00000000         
+    8 00000000                 PRESERVE8                    ; восьмиба�
+                                                            �товое выр�
+                                                            �внивание �
+                                                            �тека
+    9 00000000                 THUMB                        ; Поддержк�
+                                                            � инструкц�
+                                                            �й Thumb 
+   10 00000000         
+   11 00000000                 EXPORT           __initial_sp ; экспорти
+                                                            руем адрес
+                                                             стека
+   12 00000000         
+   13 00000000                 AREA             RESET, DATA, READONLY ; Объ�
+                                                            �вление се�
+                                                            �мента код�
+                                                            � 
+   14 00000000         ; для старта, область векторов
+   15 00000000 00000000 
+                       __Vectors
+                               DCD              __initial_sp ; Первое с�
+                                                            �ово кода с
+                                                            одержит ад
+                                                            рес стека
+   16 00000004 00000000        DCD              Reset_Entry ; Вектор сб
+                                                            роса
+   17 00000008                 AREA             |.text|, CODE, READONLY ; Об�
+                                                            �явление о�
+                                                            �ласти .text
+   18 00000000         
+   19 00000000                 EXPORT           __Vectors   ; экспорти�
+                                                            �уем адрес 
+                                                            векторов
+   20 00000000         
+   21 00000000                 ENTRY                        ; Описание 
+                                                            точки вход
+                                                            а 
+   22 00000000         
+   23 00000000         Reset_Entry
+                               PROC                         ; Описание 
+                                                            процедуры 
+                                                            входа
+   24 00000000                 EXPORT           Reset_Entry [WEAK] ; Экспо
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            ртируем ко
+                                                            мпоновщик�
+                                                            � слабый 
+   25 00000000         ; символ, т.е. без приоритета им�
+                       �ни 
+   26 00000000         ; для компоновщика (может быть �
+                       �аменен).
+   27 00000000         ; закомментировано для будущих
+                        применений
+   28 00000000         ;  IMPORT  SystemInit  ; Импортируем внеш
+                       ную ссылку функции инициализа�
+                       �ии           
+   29 00000000                 IMPORT           __main      ; Импортир�
+                                                            �ем внешну�
+                                                            � ссылку ос
+                                                            новной фун
+                                                            кции
+   30 00000000         ; закомментировано для будущих
+                        применений
+   31 00000000         ;    LDR     R0, =SystemInit ; Заносим адрес
+                        функции инициализации в R0
+   32 00000000         ;            BLX     R0    ; Переход на фун�
+                       �цию ининциализации с возврато
+                       м
+   33 00000000 4800            LDR              R0, =__main ; Заносим а
+                                                            дрес основ
+                                                            ной функци
+                                                            и
+   34 00000002 4700            BX               R0          ; Выполняе�
+                                                            � основную 
+                                                            функцию
+   35 00000004                 ENDP                         ; Конец ста
+                                                            ртовой фун
+                                                            кции
+   36 00000004         
+   37 00000004                 ALIGN                        ; Выравнив�
+                                                            �ние кода
+   38 00000004         
+   39 00000004                 END                          ; конец фай
+                                                            ла.
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --depend=.\ob
+jects\startup.d -o.\objects\startup.o -IC:\Users\ayty-\Documents\keil\Keil\STM3
+2F1xx_DFP\2.3.0\Device\Include -IE:\Program\ARM\CMSIS\Include --predefine="__EV
+AL SETA 1" --predefine="__UVISION_VERSION SETA 531" --predefine="STM32F10X_MD S
+ETA 1" --list=.\listings\startup.lst startup.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 3 in file startup.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 4 in file startup.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00000000
+
+Symbol: __initial_sp
+   Definitions
+      At line 5 in file startup.s
+   Uses
+      At line 11 in file startup.s
+      At line 15 in file startup.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 13 in file startup.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 15 in file startup.s
+   Uses
+      At line 19 in file startup.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 17 in file startup.s
+   Uses
+      None
+Comment: .text unused
+Reset_Entry 00000000
+
+Symbol: Reset_Entry
+   Definitions
+      At line 23 in file startup.s
+   Uses
+      At line 16 in file startup.s
+      At line 24 in file startup.s
+
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+Stack_size 00000000
+
+Symbol: Stack_size
+   Definitions
+      At line 1 in file startup.s
+   Uses
+      At line 4 in file startup.s
+Comment: Stack_size used once
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 29 in file startup.s
+   Uses
+      At line 33 in file startup.s
+Comment: __main used once
+1 symbol
+344 symbols in table

@@ -1,0 +1,20 @@
+./objects/svmfunctions.o: \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\SVMFunctions.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_linear_init_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Include\arm_math.h \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\string.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\math.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\float.h \
+  E:\Program\ARM\ARMCLANG\Bin\..\include\limits.h \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_linear_predict_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_polynomial_init_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_polynomial_predict_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_rbf_init_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_rbf_predict_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_sigmoid_init_f32.c \
+  C:\Users\ayty-\Documents\keil\ARM\CMSIS\5.7.0\CMSIS\DSP\Source\SVMFunctions\arm_svm_sigmoid_predict_f32.c
